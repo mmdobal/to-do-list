@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import ListItem from '../ListItem';
 import Form from '../Form';
 import SearchBar from '../SearchBar';
@@ -7,31 +8,64 @@ const fakeList = [
   {
     id: '3',
     createdAt: 1563490180,
-    name: 'name 3',
+    name: 'study python',
     status: 'todo',
   },
   {
     id: '4',
     createdAt: 1563490120,
-    name: 'name 4',
+    name: 'listen to music',
     status: 'done',
   },
   {
     id: '5',
     createdAt: 1563490060,
-    name: 'name 5',
+    name: 'study javascript',
     status: 'done',
   },
   {
     id: '6',
     createdAt: 1563490000,
-    name: 'name 6',
+    name: 'be awesome',
     status: 'todo',
   },
 ];
 
 const List = () => {
-  const [list, setList] = useState([...fakeList]);
+
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    // Update the document title using the browser API
+   axios.get('http://5d2faa1928465b00146aa7be.mockapi.io/api/tasks')
+    .then((response) => {
+      setList(response.data);
+    })
+    .catch(err => console.log(err));
+  }, []);
+  /*
+
+  useEffect(async () => {
+    const fetchData = async () => {
+      const result = await axios(
+        'http://5d2faa1928465b00146aa7be.mockapi.io/api/tasks',
+      );
+
+      setList(result.data);
+    };
+
+    fetchData();
+  });
+
+  useEffect(() => {    
+    fetch('http://5d2faa1928465b00146aa7be.mockapi.io/api/tasks')    
+    .then(response => response.json())      
+    .then(jsonResponse => {        
+      setList([...jsonResponse.data]);     
+    });  
+  }, []);
+  */
+
 
   const handleAdd = ({ name, status }) => {
     list.push({ name, status, id: 15 });
@@ -55,15 +89,20 @@ const List = () => {
     setList([...updatedList]);
   };
 
-  const HandleSearch = (text) => {
-    const updatedList = list.filter(item => item.name.includes(text));
+  const handleSearch = (input) => {
+    console.log(input);
+    const updatedList = list.filter(item => item.name.includes(input.searchValue));
+    console.log(updatedList);
     setList([...updatedList]);
+    if (input.searchValue.length === 1){
+      setList([...fakeList]);
+    }
   };
 
 
   return (
       <div>
-        <SearchBar onSearch={HandleSearch} />   
+        <SearchBar onSearch={handleSearch} />   
         <Form onAdd={handleAdd} status="todo" />
         <div className="list">
         <h2>Todo</h2>
