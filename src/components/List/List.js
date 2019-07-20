@@ -42,7 +42,7 @@ const List = () => {
       setList(response.data);
     })
     .catch(err => console.log(err));
-  }, []);
+  },[]);
   /*
 
   useEffect(async () => {
@@ -68,19 +68,40 @@ const List = () => {
 
 
   const handleAdd = ({ name, status }) => {
+    //axios.post('http://5d2faa1928465b00146aa7be.mockapi.io/api/tasks/', { name, status })
+    //.then(response => console.log(response))
     list.push({ name, status, id: 15 });
     setList([...list]);
   };
 
   const handleDelete = (id) => {
+    //axios.delete(`http://5d2faa1928465b00146aa7be.mockapi.io/api/tasks/${id}`)
+    //.then(console.log("deleted"))
     const updatedList = list.filter(item => item.id !== id);
     console.log(updatedList);
     setList([...updatedList]);
   };
 
+  /*
+  const handleToggle = (item) => {
+    console.log(item);
+    //console.log("id do item",item.id);
+    if (item.status === 'done') {
+      axios.patch(`http://5d2faa1928465b00146aa7be.mockapi.io/api/tasks/${item.id}`,   
+      JSON.stringify(
+        { id: item.id, createdAt: item.createdAt, name: item.name, status: "todo" })
+      );
+    } else if (item.status === 'todo') {
+      //console.log("id do item",item.id); 
+      axios.patch(`http://5d2faa1928465b00146aa7be.mockapi.io/api/tasks/${item.id}`,  
+      JSON.stringify({ id: item.id, createdAt: item.createdAt, name: item.name, status: "done" }))
+    };  
+    //console.log(`status done ${item.id}`) :console.log('nada')
+  };
+  */
   const handleToggle = (id) => {
     const updatedList = list.map((item) => {      
-      console.log('a', item);
+      //console.log('a', item);
       if (item.id === id) {
         item.status = item.status === 'done' ? 'todo' : 'done';
       }
@@ -88,6 +109,7 @@ const List = () => {
     });
     setList([...updatedList]);
   };
+   
 
   const handleSearch = (input) => {
     console.log(input);
