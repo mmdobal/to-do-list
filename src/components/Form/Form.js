@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react';
 
-const Form = ({ onAdd, status }) => {
+const Form = ({ onAdd }) => {
   const [name, setName] = useState('');
 
-  const addItem = useCallback(() => onAdd({ name, status }));
+  const addItem = useCallback(() => onAdd(name));
 
   const onChange = event => setName(event.target.value);
   //const resetInputField = () => setName('');

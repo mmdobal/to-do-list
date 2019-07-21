@@ -25,7 +25,7 @@ const SearchBar = ({ onSearch }) => {
 const SearchBar = ({ onSearch }) => {
   const [searchValue, setSearchValue] = useState('');
 
-  const searchItem = useCallback(() => onSearch({ searchValue }));
+  //const searchItem = useCallback(() => onSearch({ searchValue }));
 
   const onChange = (event) => {
     setSearchValue(event.target.value);
@@ -39,6 +39,5 @@ const SearchBar = ({ onSearch }) => {
         </div>
   );
 };
-//<button type="submit" onClick={searchItem}>Search</button>
 
 export default SearchBar;

@@ -7,8 +7,8 @@ const Button = ({ text, onClick }) => (
 
 const ListItem = React.memo(({ item, onDelete, onToggle }) => {
 
-  const toggleStatus = useCallback(() => onToggle(item.id));
-  const deleteItem = useCallback(() => onDelete(item.id));
+  const toggleStatus = useCallback(() => onToggle(item));
+  const deleteItem = useCallback(() => onDelete(item._id));
 
   const toggleBtn = item.status === 'done'
     ? <Button text="Undo" onClick={toggleStatus} />
