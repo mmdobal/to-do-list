@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ListItem from '../ListItem';
 import Form from '../Form';
 import SearchBar from '../SearchBar';
@@ -14,7 +14,7 @@ const fakeList = [
     id: '4',
     createdAt: 1563490120,
     name: 'name 4',
-    status: 'done',
+    status: 'done',useEffect
   },
   {
     id: '5',
