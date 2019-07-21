@@ -69,7 +69,7 @@ const List = () => {
           <ul>
             {
                 list.filter(item => item.status === 'todo').map(item => (
-                  <ListItem item={item} onDelete={handleDelete} onToggle={handleToggle} />
+                  <ListItem key={item._id} item={item} onDelete={handleDelete} onToggle={handleToggle} />
                 ))}
           </ul>
         </div>
@@ -79,7 +79,7 @@ const List = () => {
           <h2>Done</h2>
           <ul>
               {list.filter(item => item.status === 'done').map(item => (
-            <ListItem item={item} onDelete={handleDelete} onToggle={handleToggle} />
+            <ListItem key={item._id} item={item} onDelete={handleDelete} onToggle={handleToggle} />
           ))}
             </ul>
         </div>
