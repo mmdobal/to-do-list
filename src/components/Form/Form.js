@@ -6,6 +6,7 @@ const Form = ({ onAdd, status }) => {
   const addItem = useCallback(() => onAdd({ name, status }));
 
   const onChange = event => setName(event.target.value);
+  //const resetInputField = () => setName('');
 
 
   return (
