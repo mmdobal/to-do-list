@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/xp-todo/static/css/main.bc1fa9e0.chunk.css",
+    "main.js": "/xp-todo/static/js/main.bd91c87a.chunk.js",
+    "main.js.map": "/xp-todo/static/js/main.bd91c87a.chunk.js.map",
+    "runtime~main.js": "/xp-todo/static/js/runtime~main.3b73d3b3.js",
+    "runtime~main.js.map": "/xp-todo/static/js/runtime~main.3b73d3b3.js.map",
+    "static/js/2.0128ec8a.chunk.js": "/xp-todo/static/js/2.0128ec8a.chunk.js",
+    "static/js/2.0128ec8a.chunk.js.map": "/xp-todo/static/js/2.0128ec8a.chunk.js.map",
+    "index.html": "/xp-todo/index.html",
+    "precache-manifest.36bf54784ffd6f2b30100094f8cd072b.js": "/xp-todo/precache-manifest.36bf54784ffd6f2b30100094f8cd072b.js",
+    "service-worker.js": "/xp-todo/service-worker.js",
+    "static/css/main.bc1fa9e0.chunk.css.map": "/xp-todo/static/css/main.bc1fa9e0.chunk.css.map"
+  }
+}
