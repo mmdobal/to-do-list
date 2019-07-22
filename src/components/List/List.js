@@ -4,7 +4,6 @@ import ListItem from '../ListItem';
 import Form from '../Form';
 import SearchBar from '../SearchBar';
 
-
 const List = () => {
   const [list, setList] = useState([]);
   const [aux, setAux] = useState([]);
