@@ -61,25 +61,23 @@ const List = () => {
     <div>
     <h1>ToDo List</h1>
       <div className="upper">
-
       <SearchBar onSearch={handleSearch} />
       <Form onAdd={handleAdd} status="todo" />
       </div>
       <div className="list">
           <h2>Todo</h2>
           <ul>
-            {
-                list.filter(item => item.status === 'todo').map(item => (
-                  <ListItem key={item._id} item={item} onDelete={handleDelete} onToggle={handleToggle} />
-                ))}
+            {list.filter(item => item.status === 'todo').map(item => (
+              <ListItem key={item._id} item={item} onDelete={handleDelete} onToggle={handleToggle} />
+            ))}
           </ul>
         </div>
       <div className="list">
           <h2>Done</h2>
           <ul>
-              {list.filter(item => item.status === 'done').map(item => (
-            <ListItem key={item._id} item={item} onDelete={handleDelete} onToggle={handleToggle} />
-              ))}
+            {list.filter(item => item.status === 'done').map(item => (
+              <ListItem key={item._id} item={item} onDelete={handleDelete} onToggle={handleToggle} />
+            ))}
             </ul>
         </div>
     </div>

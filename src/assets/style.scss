@@ -28,7 +28,7 @@
   }
 
   form {
-    text-align: center
+    text-align: center;
   }
 
   .btnDel {
@@ -38,7 +38,7 @@
   .btn-block {
     display: inline-block;
     justify-content: space-between;
-    width: 40%;
+    width: 30%;
   }
 
   .list-item {
@@ -55,11 +55,14 @@
   li {
     border-bottom: 2px solid #f5f5f5;
     padding: 10px 5px 10px 5px;
+    width: 100%;
+    justify-content: space-between;
   }
 
   .upper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-content: center;
     margin: 40px 0 40px 0;
   }
 
@@ -68,15 +71,17 @@
     color: rgb(46, 45, 45)
   }
 
-  input {
-    //background-color: white;
-   // background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    height: 40px;
-    //padding-left: 40px;
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  input { 
+    height: 50px;
     border: none;
     border-bottom: 2px solid gray;
     margin-right: 3px;
+    font-size: 100%;
+    font-family: 'Roboto', sans-serif;
   }
 
 
