@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "build": "webpack --mode production"
   },
   "homepage": "https://mmdobal.github.io/xp-todo/",
   "author": "",
@@ -17,7 +15,8 @@
     "gh-pages": "^2.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-scripts": "^3.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
