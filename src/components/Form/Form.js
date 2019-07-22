@@ -12,7 +12,7 @@ const Form = ({ onAdd }) => {
   return (
     <div>
           <input value={name} onChange={onChange} type="text" placeholder="New task" />
-          <button type="submit" onClick={addItem}>Submit</button>
+          <button className="btn" type="submit" onClick={addItem}>add</button>
         </div>
   );
 };

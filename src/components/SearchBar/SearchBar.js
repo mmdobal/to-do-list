@@ -23,13 +23,14 @@ const SearchBar = ({ onSearch }) => {
 
 */
 const SearchBar = ({ onSearch }) => {
-  const [searchValue, setSearchValue] = useState('');
+  //const [searchValue, setSearchValue] = useState('');
 
-  //const searchItem = useCallback(() => onSearch({ searchValue }));
+  const searchItem = useCallback(() => onSearch( event.target.value ));
 
   const onChange = (event) => {
-    setSearchValue(event.target.value);
-    onSearch({searchValue});
+    //let searchValue = event.target.value;
+    //setSearchValue(event.target.value);
+    searchItem();
   };
 
   return (

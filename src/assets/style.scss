@@ -8,6 +8,7 @@
     font-size: 100%;
     font-family: 'Roboto', sans-serif;
     background-color: #F5F5F5;
+    color: rgb(71, 69, 69)
     }
 
   .box {
@@ -30,23 +31,8 @@
     text-align: center
   }
 
-  .btn {
-    display: inline-block;
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-    border: solid 2px;
-    border-color: rgb(209, 208, 208);
-    background-color:transparent;
-    border-radius: 4px;
-    padding: 0 6px;
-    margin-right: 3px;
-    min-width: 70px;
-    height: 30px;
-    vertical-align: middle;
-    text-align: center;
-    cursor: pointer;
-    text-overflow: ellipsis;
-    text-transform: uppercase;
+  .btnDel {
+    border-color: #dd4949;
   }
 
   .btn-block {
@@ -71,4 +57,51 @@
     padding: 10px 5px 10px 5px;
   }
 
+  .upper {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0 40px 0;
+  }
+
+  h1 {
+    text-align: center;
+    color: rgb(46, 45, 45)
+  }
+
+  input {
+    //background-color: white;
+   // background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    height: 40px;
+    //padding-left: 40px;
+    border: none;
+    border-bottom: 2px solid gray;
+    margin-right: 3px;
+  }
+
+
+  input:focus{
+    outline: none;
+  }
+
+  button {
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    border: solid 2px;
+    border-color: rgb(209, 208, 208);
+    background-color:transparent;
+    border-radius: 4px;
+    padding: 0 6px;
+    margin-right: 3px;
+    min-width: 70px;
+    height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+  }
+
+  
   
