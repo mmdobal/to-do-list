@@ -1,137 +1,85 @@
 import React, { useState, useEffect } from 'react';
-<<<<<<< HEAD
-=======
 import axios from 'axios';
->>>>>>> cafe3b8ff1b3474852ca1e3b73e86c3ffc0c2c26
 import ListItem from '../ListItem';
 import Form from '../Form';
 import SearchBar from '../SearchBar';
 
-const fakeList = [
-  {
-    id: '3',
-    createdAt: 1563490180,
-    name: 'study python',
-    status: 'todo',
-  },
-  {
-    id: '4',
-    createdAt: 1563490120,
-<<<<<<< HEAD
-    name: 'name 4',
-    status: 'done',useEffect
-=======
-    name: 'listen to music',
-    status: 'done',
->>>>>>> cafe3b8ff1b3474852ca1e3b73e86c3ffc0c2c26
-  },
-  {
-    id: '5',
-    createdAt: 1563490060,
-    name: 'study javascript',
-    status: 'done',
-  },
-  {
-    id: '6',
-    createdAt: 1563490000,
-    name: 'be awesome',
-    status: 'todo',
-  },
-];
-
 const List = () => {
-
   const [list, setList] = useState([]);
+  const [aux, setAux] = useState([]);
 
   useEffect(() => {
-    // Update the document title using the browser API
-   axios.get('http://5d2faa1928465b00146aa7be.mockapi.io/api/tasks')
-    .then((response) => {
-      setList(response.data);
-    })
-    .catch(err => console.log(err));
-  }, []);
-  /*
-
-  useEffect(async () => {
-    const fetchData = async () => {
-      const result = await axios(
-        'http://5d2faa1928465b00146aa7be.mockapi.io/api/tasks',
-      );
-
-      setList(result.data);
-    };
-
-    fetchData();
-  });
-
-  useEffect(() => {    
-    fetch('http://5d2faa1928465b00146aa7be.mockapi.io/api/tasks')    
-    .then(response => response.json())      
-    .then(jsonResponse => {        
-      setList([...jsonResponse.data]);     
-    });  
-  }, []);
-  */
+    axios.get('https://fast-caverns-36778.herokuapp.com/api/tasks/')
+      .then((response) => {
+        setList(response.data);
+      });
+  }, [aux]);
 
 
-  const handleAdd = ({ name, status }) => {
-    list.push({ name, status, id: 15 });
-    setList([...list]);
+  const handleAdd = (name) => {
+    axios.post('https://fast-caverns-36778.herokuapp.com/api/tasks', { name })
+      .then(response => setAux(response.data));
   };
 
   const handleDelete = (id) => {
-    const updatedList = list.filter(item => item.id !== id);
-    console.log(updatedList);
-    setList([...updatedList]);
+    axios.delete(`https://fast-caverns-36778.herokuapp.com/api/tasks/${id}`)
+      .then(response => setAux(response.data));
   };
 
-  const handleToggle = (id) => {
-    const updatedList = list.map((item) => {      
-      console.log('a', item);
-      if (item.id === id) {
-        item.status = item.status === 'done' ? 'todo' : 'done';
-      }
-      return item;
-    });
-    setList([...updatedList]);
-  };
 
-  const handleSearch = (input) => {
-    console.log(input);
-    const updatedList = list.filter(item => item.name.includes(input.searchValue));
-    console.log(updatedList);
-    setList([...updatedList]);
-    if (input.searchValue.length === 1){
-      setList([...fakeList]);
+  const handleToggle = (item) => {
+    if (item.status === 'done') {
+      axios.put(`https://fast-caverns-36778.herokuapp.com/api/tasks/${item._id}`,
+        { status: 'todo' })
+        .then(response => setAux(response.data));
+    } else if (item.status === 'todo') {
+      axios.put(`https://fast-caverns-36778.herokuapp.com/api/tasks/${item._id}`,
+        { status: 'done' })
+        .then(response => setAux(response.data));
     }
   };
 
 
-  return (
-      <div>
-        <SearchBar onSearch={handleSearch} />   
-        <Form onAdd={handleAdd} status="todo" />
-        <div className="list">
-        <h2>Todo</h2>
-          <ul>
-              {
-                list.filter(item => item.status === 'todo').map(item => (
-                  <ListItem item={item} onDelete={handleDelete} onToggle={handleToggle} />
-              ))}
-          </ul>
-        </div>
-          <hr></hr>
-          <div className="list">
+  const handleSearch = (input) => {
+    if (input === '') {
+      axios.get('https://fast-caverns-36778.herokuapp.com/api/tasks/')
+        .then((response) => {
+          setList(response.data);
+          setAux(response.data);
+        })
+        .catch(err => console.log(err));
+    }
+    axios.get(`https://fast-caverns-36778.herokuapp.com/api/tasks/filter/${input}`)
+      .then((response) => {
+        setList(response.data);
+      });
+  };
 
-        <h2>Done</h2>
-        <ul>
-              {list.filter(item => item.status === 'done').map(item => ( 
-                  <ListItem item={item} onDelete={handleDelete} onToggle={handleToggle} />
-              ))}
+
+  return (
+    <div>
+    <h1>ToDo List</h1>
+      <div className="upper">
+      <SearchBar onSearch={handleSearch} />
+      <Form onAdd={handleAdd} status="todo" />
+      </div>
+      <div className="list">
+          <h2>Todo</h2>
+          <ul>
+            {list.filter(item => item.status === 'todo').map(item => (
+              <ListItem key={item._id} item={item} onDelete={handleDelete} onToggle={handleToggle} />
+            ))}
           </ul>
-          </div>
         </div>
+      <div className="list">
+          <h2>Done</h2>
+          <ul>
+            {list.filter(item => item.status === 'done').map(item => (
+              <ListItem key={item._id} item={item} onDelete={handleDelete} onToggle={handleToggle} />
+            ))}
+            </ul>
+        </div>
+    </div>
   );
 };
 

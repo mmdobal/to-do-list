@@ -1,14 +1,14 @@
 import React, { useCallback } from 'react';
 
-const Button = ({ text, onClick }) => (
-  <button className="btn" onClick={onClick}>{text}</button>
+const Button = ({ text, onClick, btnClass }) => (
+  <button className={btnClass} onClick={onClick}>{text}</button>
 );
 
 
 const ListItem = React.memo(({ item, onDelete, onToggle }) => {
 
-  const toggleStatus = useCallback(() => onToggle(item.id));
-  const deleteItem = useCallback(() => onDelete(item.id));
+  const toggleStatus = useCallback(() => onToggle(item));
+  const deleteItem = useCallback(() => onDelete(item._id));
 
   const toggleBtn = item.status === 'done'
     ? <Button text="Undo" onClick={toggleStatus} />
@@ -16,10 +16,12 @@ const ListItem = React.memo(({ item, onDelete, onToggle }) => {
 
   return (
     <li className="list-item">
-      {item.name}
+      <h3>
+        {item.name}
+      </h3>
       <div className="btn-block">
         {toggleBtn}
-        <Button text="Delete" onClick={deleteItem} />
+        <Button btnClass="btn-del" text="Delete" onClick={deleteItem} />
       </div>
     </li>
   );

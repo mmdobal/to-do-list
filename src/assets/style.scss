@@ -8,6 +8,7 @@
     font-size: 100%;
     font-family: 'Roboto', sans-serif;
     background-color: #F5F5F5;
+    color: rgb(71, 69, 69)
     }
 
   .box {
@@ -27,10 +28,68 @@
   }
 
   form {
-    text-align: center
+    text-align: center;
   }
 
-  .btn {
+  .btnDel {
+    border-color: #dd4949;
+  }
+
+  .btn-block {
+    display: inline-block;
+    justify-content: space-between;
+    width: 30%;
+  }
+
+  .list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+
+  .list {
+    padding: 3%;
+  }
+
+  li {
+    border-bottom: 2px solid #f5f5f5;
+    padding: 10px 5px 10px 5px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .upper {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin: 40px 0 40px 0;
+  }
+
+  h1 {
+    text-align: center;
+    color: rgb(46, 45, 45)
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  input { 
+    height: 50px;
+    border: none;
+    border-bottom: 2px solid gray;
+    margin-right: 3px;
+    font-size: 100%;
+    font-family: 'Roboto', sans-serif;
+  }
+
+
+  input:focus{
+    outline: none;
+  }
+
+  button {
     display: inline-block;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
@@ -49,26 +108,5 @@
     text-transform: uppercase;
   }
 
-  .btn-block {
-    display: inline-block;
-    justify-content: space-between;
-    width: 40%;
-  }
-
-  .list-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-  }
-
-  .list {
-    padding: 3%;
-  }
-
-  li {
-    border-bottom: 2px solid #f5f5f5;
-    padding: 10px 5px 10px 5px;
-  }
-
+  
   
