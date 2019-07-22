@@ -13,8 +13,7 @@ const List = () => {
     axios.get('https://fast-caverns-36778.herokuapp.com/api/tasks/')
       .then((response) => {
         setList(response.data);
-      })
-      .catch(err => console.log(err));
+      });
   }, [aux]);
 
 
@@ -54,18 +53,8 @@ const List = () => {
     axios.get(`https://fast-caverns-36778.herokuapp.com/api/tasks/filter/${input}`)
       .then((response) => {
         setList(response.data);
-      })
-      .catch(err => console.log(err));
+      });
   };
-
-
-  /*    if (input.searchValue.length === 1) {
-      axios.get('https://fast-caverns-36778.herokuapp.com/api/tasks/')
-        .then((response) => {
-          setList(response.data);
-        })
-        .catch(err => console.log(err));
-    }*/
 
 
   return (

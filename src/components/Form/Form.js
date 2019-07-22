@@ -6,14 +6,13 @@ const Form = ({ onAdd }) => {
   const addItem = useCallback(() => onAdd(name));
 
   const onChange = event => setName(event.target.value);
-  //const resetInputField = () => setName('');
 
 
   return (
     <div>
-          <input value={name} onChange={onChange} type="text" placeholder="New task" />
-          <button className="btn" type="submit" onClick={addItem}>add</button>
-        </div>
+      <input value={name} onChange={onChange} type="text" placeholder="New task" />
+      <button className="btn" type="submit" onClick={addItem}>add</button>
+    </div>
   );
 };
 
