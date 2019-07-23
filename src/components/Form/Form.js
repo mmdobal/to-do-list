@@ -3,7 +3,10 @@ import React, { useCallback, useState } from 'react';
 const Form = ({ onAdd }) => {
   const [name, setName] = useState('');
 
-  const addItem = useCallback(() => onAdd(name));
+  const addItem = useCallback(() => {
+    onAdd(name);
+    setName('');
+  });
 
   const onChange = event => setName(event.target.value);
 
