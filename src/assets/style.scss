@@ -44,7 +44,7 @@ li {
 	background: white;
 	color: #666;
 	font-size-adjust: 0.58;
-	height: 40px;
+	// height: 40px;
 	line-height: 40px;
 	padding: 8px 20px;
 	flex-wrap: nowrap;
@@ -115,8 +115,7 @@ span {
 	border: solid 2px;
 	background-color:transparent;
 	border-radius: 4px;
-	//padding: 0 6px;
-	margin-left: 10px;
+	margin: 10px;
 	min-width: 70px;
 	height: 30px;
 	vertical-align: middle;
@@ -145,9 +144,10 @@ span {
 
 
 .btn-block {
-  display: inline-block;
-  justify-content: space-between;
-  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 35%;
 }
 
 .btn-del {
