@@ -57,9 +57,9 @@ const List = () => {
 
 
   return (
-    <div>
+    <div id="container">
     <h1>ToDo List</h1>
-      <div className="upper">
+      <div className="forms">
       <SearchBar onSearch={handleSearch} />
       <Form onAdd={handleAdd} status="todo" />
       </div>

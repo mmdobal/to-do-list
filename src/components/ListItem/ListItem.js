@@ -11,8 +11,8 @@ const ListItem = React.memo(({ item, onDelete, onToggle }) => {
   const deleteItem = useCallback(() => onDelete(item._id));
 
   const toggleBtn = item.status === 'done'
-    ? <Button text="Undo" onClick={toggleStatus} />
-    : <Button text="Done" onClick={toggleStatus} />;
+    ? <Button btnClass="btn btn-toggle" text="Undo" onClick={toggleStatus} />
+    : <Button btnClass="btn btn-toggle" text="Done" onClick={toggleStatus} />;
 
   return (
     <li className="list-item">
@@ -21,7 +21,7 @@ const ListItem = React.memo(({ item, onDelete, onToggle }) => {
       </h3>
       <div className="btn-block">
         {toggleBtn}
-        <Button btnClass="btn-del" text="Delete" onClick={deleteItem} />
+        <Button btnClass="btn btn-del" text="Delete" onClick={deleteItem} />
       </div>
     </li>
   );
