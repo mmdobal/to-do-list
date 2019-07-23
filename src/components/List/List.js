@@ -15,7 +15,6 @@ const List = () => {
       });
   }, [aux]);
 
-
   const handleAdd = (name) => {
     axios.post('https://fast-caverns-36778.herokuapp.com/api/tasks', { name })
       .then(response => setAux(response.data));
@@ -25,7 +24,6 @@ const List = () => {
     axios.delete(`https://fast-caverns-36778.herokuapp.com/api/tasks/${id}`)
       .then(response => setAux(response.data));
   };
-
 
   const handleToggle = (item) => {
     if (item.status === 'done') {
@@ -38,7 +36,6 @@ const List = () => {
         .then(response => setAux(response.data));
     }
   };
-
 
   const handleSearch = (input) => {
     if (input === '') {
@@ -54,7 +51,6 @@ const List = () => {
         setList(response.data);
       });
   };
-
 
   return (
     <div id="container">

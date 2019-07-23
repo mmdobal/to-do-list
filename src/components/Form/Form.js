@@ -10,7 +10,6 @@ const Form = ({ onAdd }) => {
 
   const onChange = event => setName(event.target.value);
 
-
   return (
     <div>
       <input value={name} onChange={onChange} type="text" placeholder="New task" />
@@ -18,6 +17,5 @@ const Form = ({ onAdd }) => {
     </div>
   );
 };
-
 
 export default Form;

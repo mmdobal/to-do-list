@@ -7,7 +7,6 @@
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production"
   },
-  "homepage": "https://mmdobal.github.io/xp-todo/",
   "author": "",
   "license": "ISC",
   "dependencies": {
