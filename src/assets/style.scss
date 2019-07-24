@@ -20,22 +20,22 @@ ul {
 }
 
 body {
-	background: -moz-linear-gradient(top, #dae2f8, #d6a4a4); /* Firefox 3.6+ */
-	background: -ms-linear-gradient(left, #dae2f8, #d6a4a4); /* IE 10 */
-	background: -o-linear-gradient(left, #dae2f8, #d6a4a4); /* Opera 11.10+ */
+	background: -moz-linear-gradient(top, #dae2f8, #d6a4a4);
+	background: -ms-linear-gradient(left, #dae2f8, #d6a4a4);
+	background: -o-linear-gradient(left, #dae2f8, #d6a4a4);
 	background: -webkit-gradient(
 		linear,
 		0% 0%,
 		0% 100%,
 		from(#d6a4a4),
 		to(#dae2f8)
-	); /* Safari 4-5, Chrome 1-9 */
+	);
 	background: -webkit-linear-gradient(
 		left,
 		#dae2f8,
 		#d6a4a4
-	); /* Safari 5.1, Chrome 10+ */
-	background-color: #d6a4a4; /* fallback */
+	);
+	background-color: #d6a4a4;
 
 	font-family: roboto;
 }
@@ -92,6 +92,7 @@ span {
 	background-color: #F7F7F7;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 	margin: 100px auto;
+	min-width: 300px;
 	width: 40%;
 	border: 0px solid #DDDCDC;
 	border-radius: 12px;
